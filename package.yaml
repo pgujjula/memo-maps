@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: Copyright Preetham Gujjula
+# SPDX-License-Identifier: BSD-3-Clause
+spec-version: 0.37.0
+name:         memo-maps
+version:      0.1.0.0
+synopsis:     Data structures for memoizing functions
+description:  Please see the README on Codeberg at <https://codeberg.org/pgujjula/memo-maps#readme>
+category:     Data,Data Structures
+stability:    experimental
+github:       "pgujjula/memo-maps"
+author:       "Preetham Gujjula"
+maintainer:   "Preetham Gujjula <libraries@mail.preetham.io>"
+copyright:    "Preetham Gujjula"
+license:      BSD-3-Clause
+
+tested-with:
+- GHC == 9.6.7
+- GHC == 9.8.4
+- GHC == 9.10.1
+- GHC == 9.12.2
+
+extra-doc-files:
+- README.md
+- CHANGELOG.md
+- LICENSES/BSD-3-Clause.txt
+
+language: Haskell2010
+
+default-extensions:
+- ImportQualifiedPost
+
+dependencies:
+- base ^>= {4.18, 4.19, 4.20, 4.21}
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+- -Wunused-packages
+
+library:
+  source-dirs: src
+
+tests:
+  memo-maps-tests:
+    main: Main.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - memo-maps
+    - tasty
+    - tasty-hunit

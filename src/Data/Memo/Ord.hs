@@ -1,0 +1,3 @@
+-- SPDX-FileCopyrightText: Copyright Preetham Gujjula
+-- SPDX-License-Identifier: BSD-3-Clause
+module Data.Memo.Ord () where

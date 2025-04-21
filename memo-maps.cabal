@@ -1,0 +1,61 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           memo-maps
+version:        0.1.0.0
+synopsis:       Data structures for memoizing functions
+description:    Please see the README on Codeberg at <https://codeberg.org/pgujjula/memo-maps#readme>
+category:       Data,Data Structures
+stability:      experimental
+homepage:       https://github.com/pgujjula/memo-maps#readme
+bug-reports:    https://github.com/pgujjula/memo-maps/issues
+author:         Preetham Gujjula
+maintainer:     Preetham Gujjula <libraries@mail.preetham.io>
+copyright:      Preetham Gujjula
+license:        BSD-3-Clause
+build-type:     Simple
+tested-with:
+    GHC == 9.6.7
+  , GHC == 9.8.4
+  , GHC == 9.10.1
+  , GHC == 9.12.2
+extra-doc-files:
+    README.md
+    CHANGELOG.md
+    LICENSES/BSD-3-Clause.txt
+
+source-repository head
+  type: git
+  location: https://github.com/pgujjula/memo-maps
+
+library
+  exposed-modules:
+      Data.Memo.Ord
+  hs-source-dirs:
+      src
+  default-extensions:
+      ImportQualifiedPost
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunused-packages
+  build-depends:
+      base >=4.18 && <4.19 || >=4.19 && <4.20 || >=4.20 && <4.21 || >=4.21 && <4.22
+  default-language: Haskell2010
+
+test-suite memo-maps-tests
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Test.Data.Memo.Ord
+  hs-source-dirs:
+      test
+  default-extensions:
+      ImportQualifiedPost
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wunused-packages -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.18 && <4.19 || >=4.19 && <4.20 || >=4.20 && <4.21 || >=4.21 && <4.22
+    , memo-maps
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010
